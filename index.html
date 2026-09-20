@@ -80,7 +80,7 @@
     // it, so a user-agent quirk on the real 13.52 console can never lock it out.
     if (!supported) {
         setState("UNSUPPORTED FIRMWARE", "bad");
-        waitForTap(" اضغط على المفتاح للاستمرار (" + (key || "unknown") + ") غير مدعوم ", go);
+        waitForTap(" اضغط على المفتاح للاستمرار (" + (key || "غيرمدعوم") + ") غير مدعوم ", go);
         return;
     }
 
@@ -108,7 +108,7 @@
         }, false);
         ac.addEventListener("cached", function () {
             setCache("cached for offline use", true);
-            waitForTap(" اضغط على المفتاح للاستمرار (first run) ذاكرة التخزين", go);
+            waitForTap(" ذاكرة التخزين...اضغط على المفتاح للاستمرار", go);
         }, false);
         ac.addEventListener("updateready", function () {
             try { ac.swapCache(); } catch (e) {}
